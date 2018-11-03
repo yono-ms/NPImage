@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageLicenseUrl>https://github.com/yono-ms/NPImage/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/yono-ms/NPImage</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
