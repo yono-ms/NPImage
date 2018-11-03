@@ -4,4 +4,26 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\default.9.png" />
+    <None Remove="Resources\disabled.9.png" />
+    <None Remove="Resources\pressed.9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\default.9.png" />
+    <EmbeddedResource Include="Resources\disabled.9.png" />
+    <EmbeddedResource Include="Resources\pressed.9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.60.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="TSNPButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

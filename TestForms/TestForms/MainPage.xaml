@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestForms"
+             xmlns:np="clr-namespace:NPImage;assembly=NPImage"
+             x:Class="TestForms.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="8">
+            <Label Text="NPImageView" BackgroundColor="LightSkyBlue"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Text="default"/>
+                <np:NPImageView Grid.Row="0" Grid.Column="1"/>
+                <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Text="custom image"/>
+                <np:NPImageView Grid.Row="1" Grid.Column="1" Source="TestForms.Resources.image.9.png"/>
+            </Grid>
+            <Label Text="custom size"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <np:NPImageView Source="TestForms.Resources.image.9.png" Margin="2" Grid.Row="0" Grid.Column="0"/>
+                <np:NPImageView Source="TestForms.Resources.image.9.png" Margin="2" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <np:NPImageView Source="TestForms.Resources.image.9.png" Margin="2" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2"/>
+                <np:NPImageView Source="TestForms.Resources.image.9.png" Margin="2" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            </Grid>
+            <Label Text="TSNPButton" BackgroundColor="LightSkyBlue"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Text="default"/>
+                <np:TSNPButton Grid.Row="0" Grid.Column="1" Text="default" TextColor="White" IsEnabled="{Binding Source={x:Reference switchEnabled}, Path=IsToggled}"/>
+                <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Text="custom image"/>
+                <np:TSNPButton Grid.Row="1" Grid.Column="1" Text="custom" TextColor="White" IsEnabled="{Binding Source={x:Reference switchEnabled}, Path=IsToggled}"
+                               Source="TestForms.Resources.red_default.9.png"
+                               SourcePressed="TestForms.Resources.red_pressed.9.png"
+                               SourceDisabled="TestForms.Resources.red_disabled.9.png"
+                               />
+            </Grid>
+            <Switch x:Name="switchEnabled" IsToggled="True"/>
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NPImage"
+             x:Class="NPImage.TSNPButton"
+             x:Name="contentView">
+    <ContentView.Content>
+        <Grid BindingContext="{x:Reference contentView}">
+            <local:TSNPImageView x:Name="imageView" IsEnabled="{Binding Path=IsEnabled}"/>
+            <Button x:Name="button" BackgroundColor="Transparent" IsEnabled="{Binding Path=IsEnabled}"
+                    Clicked="Button_Clicked" Pressed="Button_Pressed" Released="Button_Released"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
